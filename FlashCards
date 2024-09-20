@@ -1,0 +1,30 @@
+import React, { useState } from "react";
+
+const flashcards = [
+  { question: "What is the capital of France?", answer: "Paris" },
+  { question: "What is the square root of 16?", answer: "4" }
+];
+
+const Flashcards = () => {
+  const [currentCard, setCurrentCard] = useState(0);
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  const nextCard = () => {
+    setCurrentCard((prev) => (prev + 1) % flashcards.length);
+    setShowAnswer(false);
+  };
+
+  return (
+    <div>
+      <h2>Smart Flashcards</h2>
+      <div>
+        <p>{flashcards[currentCard].question}</p>
+        {showAnswer && <p>Answer: {flashcards[currentCard].answer}</p>}
+        <button onClick={() => setShowAnswer(true)}>Show Answer</button>
+        <button onClick={nextCard}>Next</button>
+      </div>
+    </div>
+  );
+};
+
+export default Flashcards;
