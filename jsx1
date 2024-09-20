@@ -1,0 +1,9 @@
+import { predictDifficulty } from "../ml/lessonModel";
+
+const Dashboard = () => {
+  useEffect(() => {
+    // Simulate past results
+    const pastScores = [70, 80, 90, 85];
+    predictDifficulty(pastScores);
+  }, []);
+};
