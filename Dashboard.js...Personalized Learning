@@ -1,0 +1,32 @@
+import React, { useState, useEffect } from "react";
+
+// Mock personalized learning plan
+const lessons = [
+  { id: 1, title: "Basic Math", progress: 50 },
+  { id: 2, title: "Reading Comprehension", progress: 20 },
+  { id: 3, title: "Science Facts", progress: 80 }
+];
+
+const Dashboard = () => {
+  const [userProgress, setUserProgress] = useState([]);
+
+  useEffect(() => {
+    // In a real app, you'd fetch this data from an API
+    setUserProgress(lessons);
+  }, []);
+
+  return (
+    <div>
+      <h2>Personalized Learning Path</h2>
+      <ul>
+        {userProgress.map((lesson) => (
+          <li key={lesson.id}>
+            {lesson.title} - Progress: {lesson.progress}%
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Dashboard;
