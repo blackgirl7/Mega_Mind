@@ -1,0 +1,8 @@
+mega-mind/
+  ├── src/
+      ├── components/
+          ├── Dashboard.js
+          ├── Quiz.js
+          ├── Flashcards.js
+      ├── App.js
+      ├── index.js
